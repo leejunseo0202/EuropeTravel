@@ -4,8 +4,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     
+    <!----------CSS---------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="main.css">
+
+    <!----------JS---------->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
-    <h1>hello</h1>
+    <header>
+        <div class="logo_home">
+            <img alt="logo_home">
+            <span>여행</span>
+        </div>
+    </header>
+    <main>
+        <div class="category click_Italy">
+            <div class="country_letter">
+                <div class="country_button Italy">이탈리아</div>
+                <div class="country_button Austria">오스트리아</div>
+                <div class="country_button Germany">독일</div>
+                <div class="country_button Czech">체코</div>
+            </div>
+            <ui class="category_image">
+                <li><a href="#"><img class="city_small_image" src="/image/category_Italy01.jpg" alt="Italy_image01"><span>로마</span></a></li>
+                <li><a href="#"><img class="city_small_image" src="/image/category_Italy02.jpg" alt="Italy_image02"><span>바티칸</span></a></li>
+                <li><a href="#"><img class="city_small_image" src="/image/category_Italy03.jpg" alt="Italy_image03"><span>나폴리</span></a></li>
+                <li><a href="#"><img class="city_small_image" src="/image/category_Italy04.jpg" alt="Italy_image04"><span>폼페이</span></a></li>
+            </ui>
+            <img class="city_image" src="/image/category_Italy01.jpg" alt="nav-for">
+        </div>
+
+    </main>
+
 </body>
 </html>
