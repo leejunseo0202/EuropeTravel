@@ -5,6 +5,18 @@ const body = document.querySelector("body"),
     city_span = body.querySelectorAll(".category_image span"),
     city_image = body.querySelector(".city_image");
 
+/*-----slick slide-----*/
+$('.category_image').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: false,
+    variableWidth: true,
+    arrows: false,
+    focusOnSelect: true,
+    swipeToSlide: true
+});
 
 const city_count = new Map([["Italy", 7], ["Austria", 3], ["Germany", 1], ["Czech", 1]]);
 const city_name = new Map([["Italy", ["로마", "바티칸", "나폴리", "폼페이", "소렌토", "피렌체", "베네치아"]],
@@ -25,7 +37,7 @@ countries.forEach(country=> {
         $('.category_image').slick('slickRemove', null, null, true);
         for(var i=0;i<after;i++){
             console.log("add");
-            $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="image/category_' 
+            $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/category_' 
                 + country.classList[1] + '0' + (i+1) + '.jpg" alt="image0'+ (i+1) +'"><span>'
                 + city_name.get(country.classList[1])[i] +'</span></a></li>');
         }
@@ -33,19 +45,9 @@ countries.forEach(country=> {
     })  
 });
 
-/*-----slick slide-----*/
-$('.category_image').slick({
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 1,
-    centerMode: false,
-    variableWidth: true,
-    arrows: false,
-    focusOnSelect: true,
-    swipeToSlide: true
-});
+https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_Italy02.jpg
 
 $('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){    
-    city_image.src = "image/city_"+ category.classList[1] +"0" + (currentSlide+1) + ".jpg";
+    city_image.src = "https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_"
+    + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
 });
