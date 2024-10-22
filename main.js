@@ -15,7 +15,13 @@ $('.category_image').slick({
     variableWidth: true,
     arrows: false,
     focusOnSelect: true,
-    swipeToSlide: true
+    swipeToSlide: true,
+    asNavFor: "city_image"
+});
+
+$('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){    
+    city_image.src = "https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_"
+    + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
 });
 
 const city_count = new Map([["Italy", 7], ["Austria", 3], ["Germany", 1], ["Czech", 1]]);
@@ -45,9 +51,4 @@ countries.forEach(country=> {
     })  
 });
 
-https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_Italy02.jpg
 
-$('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){    
-    city_image.src = "https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_"
-    + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
-});
