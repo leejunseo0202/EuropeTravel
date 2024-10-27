@@ -86,7 +86,7 @@ main{
 }
 .city_image{
     width: 90vw;
-    height: auto;
+    height: 60vw;
     
     margin: auto;
     display: block;

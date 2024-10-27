@@ -1,8 +1,6 @@
 const body = document.querySelector("body"),
     category = body.querySelector(".category"),
     countries = body.querySelectorAll(".country_button"),
-    city_small_image = body.querySelectorAll(".city_small_image"),
-    city_span = body.querySelectorAll(".category_image span"),
     city_image = body.querySelector(".city_image");
 
 /*-----slick slide-----*/
@@ -31,12 +29,10 @@ countries.forEach(country=> {
         category.classList.add(country.classList[1]);
 
         /*-----change category image-----*/
-        var city_small_image_li = body.querySelectorAll(".category_image li");
-        var before = city_small_image_li.length;
+        var before = (body.querySelectorAll(".category_image li")).length;
         var after = city_count.get(country.classList[1]);
         $('.category_image').slick('slickRemove', null, null, true);
         for(var i=0;i<after;i++){
-            console.log("add");
             $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/category_' 
                 + country.classList[1] + '0' + (i+1) + '.jpg" alt="image0'+ (i+1) +'"><span>'
                 + city_name.get(country.classList[1])[i] +'</span></a></li>');
@@ -45,9 +41,8 @@ countries.forEach(country=> {
     })  
 });
 
-https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_Italy02.jpg
-
-$('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){    
+$('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){   
+    console.log(currentSlide); 
     city_image.src = "https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_"
     + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
 });
