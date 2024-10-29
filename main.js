@@ -5,7 +5,6 @@ const body = document.querySelector("body"),
     city_image_h1 = body.querySelector(".city_image_detail h1"),
     city_image_span = body.querySelector(".city_image_detail span");
 
-
 /*-----slick slide-----*/
 $('.category_image').slick({
     dots: false,
@@ -26,7 +25,7 @@ const city_name = new Map([["Italy", ["로마", "바티칸", "나폴리", "폼�
                             ["Czech", ["프라하"]]]);
 /*-----Click country button Event-----*/
 countries.forEach(country=> {
-    country.addEventListener("click" , (e) =>{
+    country.addEventListener("click" , () =>{
         /*-----change text color-----*/
         category.classList.remove("Italy", "Germany", "Austria", "Czech");
         category.classList.add(country.classList[1]);
@@ -36,7 +35,7 @@ countries.forEach(country=> {
         var after = city_count.get(country.classList[1]);
         $('.category_image').slick('slickRemove', null, null, true);
         for(var i=0;i<after;i++){
-            $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/category_' 
+            $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="image/category_' 
                 + country.classList[1] + '0' + (i+1) + '.jpg" alt="image0'+ (i+1) +'"><span>'
                 + city_name.get(country.classList[1])[i] +'</span></a></li>');
         }
@@ -45,8 +44,7 @@ countries.forEach(country=> {
 });
 
 $('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){   
-    city_image.src = "https://cdn.jsdelivr.net/gh/leejunseo0202/EuropeTravel@master/image/city_"
-    + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
+    city_image.src = "image/city_" + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
 
     const city_detail = new Map([["로마", "트레비 분수, 판테온, 포로 로마노..."],
                                 ["바티칸", "성 베드로 대성전, 시스티나 성당, 바티칸 오벨리스크..."],
@@ -61,5 +59,8 @@ $('.category_image').on('afterChange', function(event, slick, currentSlide, next
                                 ["비엔나", "벨베데레 궁전, 케른트너 거리, 슈테판 대성당..."],
                                 ["프라하", "카를교, 프라하 성, 체스키크룸로프..."]]);
     city_image_h1.innerText = (city_name.get(category.classList[1]))[currentSlide];
+    localStorage.setItem("city", city_image_h1.innerText);
     city_image_span.innerText = (city_detail.get((city_name.get(category.classList[1]))[currentSlide]));
 });
+
+localStorage.setItem("city", "로마");
