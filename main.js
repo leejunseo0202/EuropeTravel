@@ -1,3 +1,5 @@
+import {city_count, city_name} from "./js/variable_module.js";
+
 const body = document.querySelector("body"),
     category = body.querySelector(".category"),
     countries = body.querySelectorAll(".country_button"),
@@ -18,11 +20,6 @@ $('.category_image').slick({
     swipeToSlide: true
 });
 
-const city_count = new Map([["Italy", 7], ["Austria", 3], ["Germany", 1], ["Czech", 1]]);
-const city_name = new Map([["Italy", ["로마", "바티칸", "나폴리", "폼페이", "소렌토", "피렌체", "베네치아"]],
-                            ["Austria", ["인스부르크", "잘츠부르크", "비엔나"]],
-                            ["Germany", ["뮌헨"]],
-                            ["Czech", ["프라하"]]]);
 /*-----Click country button Event-----*/
 countries.forEach(country=> {
     country.addEventListener("click" , () =>{

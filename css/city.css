@@ -59,7 +59,7 @@ main .section{
     display: flex;
     align-items: center;
 }
-main .order{
+main .section .order{
     width: 17vw;
     height: 11vh;
     margin: 0;
@@ -68,7 +68,7 @@ main .order{
     justify-content: center;
     align-items: center;
 }
-main .number{
+main .section .order .number{
     width: 4vh;
     height: 4vh;
     z-index: 10;
@@ -79,15 +79,17 @@ main .number{
     justify-content: center;
     align-items: center;
 }
-main .line{
+main .section .order .line{
     height: 14vh;
-    position: fixed;
+    position: relative;
+    top: 0;
+    left: -2vh;
     border-left: solid rgb(100, 100, 100) 2px;
 }
-main .spot{
+main .section .spot{
     width: 80vw;
     height: 100%;
-    padding: 0 3vw;
+    padding: 0 2vw;
     display: inline-block;
 
     background-color: white;
@@ -96,4 +98,22 @@ main .spot{
 
     display: flex;
     align-items: center;    
+}
+main .section .spot .bxs-map-pin{
+    font-size: 1.5em;
+    margin: 0 2vw;  
+}
+main .section .hotel{
+    background-color: rgb(200, 244, 255);
+}
+main .section .hotel .bx{
+    font-size: 1.5em;
+    margin: 0 2vw;
+}
+main .section .moving{
+    background-color: rgb(190, 190, 190);
+}
+main .section .moving .bx{
+    font-size: 1.5em;
+    margin: 0 2vw;
 }
