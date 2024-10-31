@@ -1,4 +1,4 @@
-import {city_count, city_name, city_detail} from "./variable_module.js";
+import {city_count, city_name, city_detail} from "./js/variable_module.js";
 
 const body = document.querySelector("body"),
     category = body.querySelector(".category"),
@@ -32,7 +32,7 @@ countries.forEach(country=> {
         var after = city_count.get(country.classList[1]);
         $('.category_image').slick('slickRemove', null, null, true);
         for(var i=0;i<after;i++){
-            $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="../image/category_' 
+            $('.category_image').slick('slickAdd', '<li><a href="#"><img class="city_small_image" src="./image/category_' 
                 + country.classList[1] + '0' + (i+1) + '.jpg" alt="image0'+ (i+1) +'"><span>'
                 + city_name.get(country.classList[1])[i] +'</span></a></li>');
         }
@@ -41,7 +41,7 @@ countries.forEach(country=> {
 });
 
 $('.category_image').on('afterChange', function(event, slick, currentSlide, nextSlide){   
-    city_image.src = "../image/city_" + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
+    city_image.src = "./image/city_" + category.classList[1] +"0" + (currentSlide+1) + ".jpg";
 
     city_image_h1.innerText = (city_name.get(category.classList[1]))[currentSlide];
     localStorage.setItem("city", city_image_h1.innerText);

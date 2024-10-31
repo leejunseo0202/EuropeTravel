@@ -7,8 +7,8 @@ const Map_html = new Map([["bx-map", "city.html"],
 
 Icon.forEach(icon=>{
     icon.addEventListener("click", () => {
-        if(currentPage == Map_html.get(icon.classList[1]))
-            location.reload();
+        if(icon.classList[1] == "bx-home")
+            window.location.href = "../" + Map_html.get(icon.classList[1]);            
         else
             window.location.href = "../html/" + Map_html.get(icon.classList[1]);
     })
