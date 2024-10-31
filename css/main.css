@@ -8,7 +8,9 @@
 
     -ms-overflow-style: none; /* (인터넷 익스플로러) 스크롤바 삭제 */
     scrollbar-width: none; /* (파이어폭스) 스크롤바 삭제*/
-    
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 /* ( 크롬, 사파리, 오페라, 엣지 ) 스크롤바 삭제 */
 *:-webkit-scrollbar {
@@ -25,7 +27,7 @@ header{
     height: 7vh;
 }
 .logo_home{
-    content:url(image/logo_home.jpg);
+    content:url(../image/logo_home.jpg);
 
     width: 3em;
     height: auto;

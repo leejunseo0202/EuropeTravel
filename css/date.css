@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+*{
+    font-family: 'Jua', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -ms-overflow-style: none; /* (인터넷 익스플로러) 스크롤바 삭제 */
+    scrollbar-width: none; /* (파이어폭스) 스크롤바 삭제*/
+    
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+/* ( 크롬, 사파리, 오페라, 엣지 ) 스크롤바 삭제 */
+*:-webkit-scrollbar {
+    display: none;
+}
+html, body{
+    width: 100vw;
+    height: 100vh;
+}
+
+/*-----header-----*/
+header{
+    height: 8vh;
+    padding: 3vh 0 2vh 3vw;
+    background-color: white;
+    border: solid rgb(200, 200, 200);
+    border-width: 0 0 2px 0;
+
+    display: flex;
+    align-items: center;
+}
+header .bx{
+    font-size: 2em;
+    display: inline-block;
+}
+header .cityname{
+    font-size: 1.3em;
+    margin: 0.1em 2vw 0 2vw;
+}

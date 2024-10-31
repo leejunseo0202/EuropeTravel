@@ -8,6 +8,8 @@
     -ms-overflow-style: none; /* (인터넷 익스플로러) 스크롤바 삭제 */
     scrollbar-width: none; /* (파이어폭스) 스크롤바 삭제*/
     
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 /* ( 크롬, 사파리, 오페라, 엣지 ) 스크롤바 삭제 */
 *:-webkit-scrollbar {
@@ -15,7 +17,7 @@
 }
 html, body{
     width: 100vw;
-    height: 100vh;
+    height: auto;
 }
 
 /*-----header-----*/
@@ -47,9 +49,27 @@ header .date{
 main{
     width: 100vw;
     height: auto;
-    padding: 3vh 3vw 0 0;
     display: inline-block;
     flex-direction: column;
+}
+main .change_city{
+    margin: 3vh 0 5vh 0;
+
+    display: flex;
+    justify-content: center;
+}
+main .bx{
+    font-size: 2em;
+}
+main span{
+    margin: 0 3vw;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+}
+
+main .plan{
+    padding: 0 3vw 8vh 0;
 }
 main .section{
     width: 97vw;
@@ -117,3 +137,4 @@ main .section .moving .bx{
     font-size: 1.5em;
     margin: 0 2vw;
 }
+
