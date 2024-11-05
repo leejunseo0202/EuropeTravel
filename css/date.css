@@ -19,7 +19,6 @@ html, body{
     width: 100vw;
     height: 100vh;
 }
-
 /*-----header-----*/
 header{
     height: 8vh;
@@ -35,7 +34,87 @@ header .bx{
     font-size: 2em;
     display: inline-block;
 }
-header .cityname{
+header .countryname{
     font-size: 1.3em;
     margin: 0.1em 2vw 0 2vw;
+}
+
+/*-----main-----*/
+main{
+    width: 100vw;
+    margin: 3vh 0 0 0;
+    overflow: hidden;
+
+}
+main .swiper{
+    margin: 0 5vw;
+}
+main .slider{
+    width: 260vw;  
+    height: 9vh;
+}
+main .slider .slide{
+    border-radius: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    flex-direction: column;
+    background-color: rgb(228, 228, 228);
+}
+.Sat{
+    color: blue;
+}
+.Sun{
+    color: red;
+}
+main .slider .slide .day_of_the_week{
+    font-size: 0.7em;
+    margin: 0.5vh 0 0 0;
+}
+main .slider .slide .day{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.Date{
+    width: 100%;
+    height: auto;
+    margin: 6vh 7vw 0 7vw;
+    font-size: 0.8em;
+}
+/*-----section-----*/
+.section{
+    margin: 3vh 0 8vh 0;
+    padding: 0 0 8vh 0;
+}
+.plan{
+    width: 100vw;
+    margin: 0 7vw 3vh 7vw;
+    display: flex;
+    overflow: auto;
+}
+.plan .letter{
+    width: 65vw;
+    display: inline-block;
+}
+.plan .title{
+    margin: 0 0 1vh 0;
+    font-size: 1em;
+}
+.plan .detail{
+    font-size: 0.9em;
+    color:rgb(110, 110, 110);
+}
+.plan img{
+    width: 20vw;
+    height: 20vw;
+    border-radius: 10%;
+}
+main .line{
+    width: 80vw;
+    height: 3vh;
+    position: relative;
+    left: 10vw;
+    border-top: solid rgb(200, 200, 200) 2px;
 }

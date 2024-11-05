@@ -7,9 +7,17 @@ const Map_html = new Map([["bx-map", "city.html"],
 
 Icon.forEach(icon=>{
     icon.addEventListener("click", () => {
-        if(icon.classList[1] == "bx-home")
-            window.location.href = "../" + Map_html.get(icon.classList[1]);            
-        else
-            window.location.href = "../html/" + Map_html.get(icon.classList[1]);
+        if(currentPage == "index.html"){
+            if(icon.classList[1] == "bx-home")
+                window.location.href = "./index.html";            
+            else
+                window.location.href = "./html/" + Map_html.get(icon.classList[1]);
+        }
+        else{
+            if(icon.classList[1] == "bx-home")
+                window.location.href = "../index.html";            
+            else
+                window.location.href = "../html/" + Map_html.get(icon.classList[1]);
+        }
     })
 })
