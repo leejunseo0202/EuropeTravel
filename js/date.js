@@ -1,4 +1,4 @@
-import {date, date_title} from "./variable_module.js";
+import {date, plan_title, plan_detail, plan_href} from "./variable_module.js";
 const body = document.querySelector("body"),
       goback = body.querySelector(".bx-left-arrow-alt"),
       countryname = body.querySelector(".countryname"),
@@ -65,28 +65,42 @@ slides.forEach(slide=>{
         beforeSlide.style.background = "rgb(228, 228, 228)";
 
         /*-----section-----*/
-        var num = Number((date_title.get(afterDate))[1]);
         section.replaceChildren();
+
+        var num = Number((plan_title.get(afterDate))[1]);
         for(var i=2;i<=num+1;i++){
-        section.innerHTML += '<div class="plan"><div class="letter"><div class="title">'
-                        + (date_title.get(afterDate))[i] + '</div><div class="detail">'
-                        + 'ICN 14:05 - FCO 19:35</div></div>'
-                        +'<img src = "../image/date_' + (date_title.get(afterDate))[i].substring(0, 3) + '.jpg"></img></div><div class="line"></div>';
+            var image_src = (plan_title.get(afterDate))[i].substring(0, 3);
+            
+            if(image_src.substring(0, 2) == "산 ")    
+                image_src = (plan_title.get(afterDate))[i].substring(0, 7);
+
+            section.innerHTML += '<div class="plan"><div class="letter"><div class="title">'
+                            + (plan_title.get(afterDate))[i] + '</div><div class="detail">'
+                            + (plan_detail.get(afterDate))[i-2] +'</div></div>'
+                            +'<img src = "../image/date_' + image_src + '.jpg"></img></div><div class="line"></div>';
         }
+
+        let plans = document.querySelectorAll(".plan");
+        plans.forEach((plan, index)=>{
+            plan.addEventListener("click", ()=>{
+                console.log((plan_href.get(afterDate))[index]);
+                window.open((plan_href.get(afterDate))[index], "_blank");
+            })
+        })
+        
+
+
         /*-----change country name-----*/
-        countryname.innerHTML = (date_title.get(afterDate))[0];
+        countryname.innerHTML = (plan_title.get(afterDate))[0];
         
         beforeDate = afterDate;
     })
 })
 
-/*-----section-----*/
-var num = Number((date_title.get(beforeDate))[1]);    
-section.replaceChildren();
-for(var i=2;i<=(num+1);i++){
-section.innerHTML += '<div class="plan"><div class="letter"><div class="title">'
-                + (date_title.get(beforeDate))[i] + '</div><div class="detail">'
-                + 'ICN 14:05 - FCO 19:35</div></div>'
-                +'<img src = "../image/date_' + (date_title.get(beforeDate))[i].substring(0, 3) + '.jpg"></img></div><div class="line"></div>';
-}
-
+let plans = document.querySelectorAll(".plan");
+plans.forEach((plan, index)=>{
+    plan.addEventListener("click", ()=>{
+        console.log((plan_href.get("27"))[index]);
+        window.open((plan_href.get("27"))[index], "_blank");
+    })
+})
