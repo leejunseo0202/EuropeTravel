@@ -10,14 +10,9 @@ const Map_index_html = new Map([["bx-map", "https://leejunseo0202.github.io/Euro
 
 Icon.forEach(icon=>{
     icon.addEventListener("click", () => {
-        console.log(currentPage);
-        if(currentPage == "index.html")
+        if(currentPage != "city.html" || currentPage != "date.html")
             window.location.href = Map_index_html.get(icon.classList[1]);
         else
             window.location.href = "." + Map_html.get(icon.classList[1]);
     })
 })
-function sleep(ms) {
-    const wakeUpTime = Date.now() + ms;
-    while (Date.now() < wakeUpTime) {}
-  }
